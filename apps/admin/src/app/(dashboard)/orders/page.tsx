@@ -1,8 +1,9 @@
 import { auth } from "@clerk/nextjs/server";
 import { Payment,columns } from "./columns";
 import { DataTable } from "./data-table";
+import { OrderType } from "@repo/types";
 
-const getData = async (): Promise<Payment[]> => {
+const getData = async (): Promise<OrderType[]> => {
    try {
     const { getToken } = await auth();
     const token = await getToken();
